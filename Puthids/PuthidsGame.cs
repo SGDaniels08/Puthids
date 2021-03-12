@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using Puthids.Entities;
 
 namespace Puthids
 {
@@ -43,21 +44,21 @@ namespace Puthids
             _gameContent = new GameContent(Content);
             _screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            // set game to 502 x 700 or screen max if smaller
-            if (_screenWidth >= 502)
+            // set game to 1000 x 500 or screen max if smaller
+            if (_screenWidth >= 1000)
             {
-                _screenWidth = 502;
+                _screenWidth = 1000;
             }
-            if (_screenHeight >= 700)
+            if (_screenHeight >= 500)
             {
-                _screenHeight = 700;
+                _screenHeight = 500;
             }
             _graphics.PreferredBackBufferWidth = _screenWidth;
             _graphics.PreferredBackBufferHeight = _screenHeight;
             _graphics.ApplyChanges();
 
             // create game objects
-
+            _mainCharacter = new Puthid(10, 10, _screenWidth, _screenHeight, _spriteBatch, _gameContent);
         }
 
         protected override void Update(GameTime gameTime)
@@ -74,6 +75,27 @@ namespace Puthids
             KeyboardState newKeyboardState = Keyboard.GetState();
             MouseState newMouseState = Mouse.GetState();
 
+            // process keyboard events
+            if (newKeyboardState.IsKeyDown(Keys.Left))
+            {
+                _mainCharacter.MoveLeft();
+            }
+            if (newKeyboardState.IsKeyDown(Keys.Right))
+            {
+                _mainCharacter.MoveRight();
+            }
+            if (newKeyboardState.IsKeyDown(Keys.Up))
+            {
+                _mainCharacter.MoveUp();
+            }
+            if (newKeyboardState.IsKeyDown(Keys.Down))
+            {
+                _mainCharacter.MoveDown();
+            }
+
+            _oldMouseState = newMouseState;
+            _oldKeyboardState = newKeyboardState;
+
             base.Update(gameTime);
         }
 
@@ -84,6 +106,7 @@ namespace Puthids
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
 
+            _mainCharacter.Draw();
             _spriteBatch.End();
             base.Draw(gameTime);
         }

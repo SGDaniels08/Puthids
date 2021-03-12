@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame0.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame1.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame10.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame11.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame12.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame13.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame14.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame15.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame16.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame17.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame18.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame19.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame2.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame20.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame21.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame22.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame23.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame3.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame4.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame5.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame6.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame7.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame8.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame9.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

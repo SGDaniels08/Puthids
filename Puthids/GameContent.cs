@@ -16,7 +16,16 @@ namespace Puthids
 
         public GameContent(ContentManager Content)
         {
+            WalkingAnimation = new List<Texture2D>();
+            Texture2D temp;
             // load images
+            for (int i = 0; i < 24; i++)
+            {
+                temp = Content.Load<Texture2D>($"stickperson__frame{i}");
+                
+                WalkingAnimation.Add(temp);
+            }
+
 
             // load sounds
 
