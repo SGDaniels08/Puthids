@@ -1,11 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "lkIrdWKO52dmgr3Ig7Q7SlJ43mXQO0+f7+z22mWu2pBUcWrd16Zi/qJFhGbKHMmNUE7L0KfCPu33so8VH8Nt6A==",
+  "dgSpecHash": "H+a9L/ZdsbF8kuaOX1Hi0WC0dRy9Gs7R4ulnygwcmR8VJOcu50he93rskAzrlWa/D3Eoy32Oh9nQLBpiNbf6jA==",
   "success": true,
   "projectFilePath": "C:\\Users\\SGDan\\Desktop\\Code\\Puthids\\Puthids\\Puthids.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SGDan\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
-    "C:\\Users\\SGDan\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+    "C:\\Users\\SGDan\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\SGDan\\.nuget\\packages\\monogame.primitives2d\\1.1.1\\monogame.primitives2d.1.1.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MonoGame.Primitives2D 1.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "MonoGame.Primitives2D",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

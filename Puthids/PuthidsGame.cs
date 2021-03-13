@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using Puthids.Entities;
+using MonoGame;
 
 namespace Puthids
 {
@@ -21,6 +22,9 @@ namespace Puthids
         private List<Puthid> _colony;
         private Terrarium _terrarium;
         private List<Terrarium> TheWall;
+
+        // TEST OBJECTS //
+        private VWall vWall;
 
         public PuthidsGame()
         {
@@ -59,6 +63,7 @@ namespace Puthids
 
             // create game objects
             _mainCharacter = new Puthid(10, 10, _screenWidth, _screenHeight, _spriteBatch, _gameContent);
+            vWall = new VWall(100, 100, 10, 100, _spriteBatch);
         }
 
         protected override void Update(GameTime gameTime)
@@ -106,6 +111,8 @@ namespace Puthids
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
 
+            // _terrarium.Draw();
+            vWall.Draw();
             _mainCharacter.Draw();
             _spriteBatch.End();
             base.Draw(gameTime);

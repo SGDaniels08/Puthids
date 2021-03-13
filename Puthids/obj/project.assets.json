@@ -54,6 +54,18 @@
             "rid": "win-x86"
           }
         }
+      },
+      "MonoGame.Primitives2D/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Framework.DesktopGL": "3.7.1.189"
+        },
+        "compile": {
+          "lib/net45/MonoGame.Primitives2D.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MonoGame.Primitives2D.dll": {}
+        }
       }
     }
   },
@@ -165,12 +177,27 @@
         "runtimes/win-x86/native/SDL2.dll",
         "runtimes/win-x86/native/soft_oal.dll"
       ]
+    },
+    "MonoGame.Primitives2D/1.1.1": {
+      "sha512": "uKTO9G9lvcI+WM0DEyRqXRMSkiZMVO4CrBcn4CUGjlqlzEmb+oRCd6rSk+VZLstNRDttuzB2Ig719R3jvJJTdg==",
+      "type": "package",
+      "path": "monogame.primitives2d/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/monogame.ico",
+        "images/monogame.png",
+        "lib/net45/MonoGame.Primitives2D.dll",
+        "monogame.primitives2d.1.1.1.nupkg.sha512",
+        "monogame.primitives2d.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "MonoGame.Content.Builder.Task >= 3.8.0.1641",
-      "MonoGame.Framework.DesktopGL >= 3.8.0.1641"
+      "MonoGame.Framework.DesktopGL >= 3.8.0.1641",
+      "MonoGame.Primitives2D >= 1.1.1"
     ]
   },
   "packageFolders": {
@@ -224,6 +251,10 @@
           "MonoGame.Framework.DesktopGL": {
             "target": "Package",
             "version": "[3.8.0.1641, )"
+          },
+          "MonoGame.Primitives2D": {
+            "target": "Package",
+            "version": "[1.1.1, )"
           }
         },
         "imports": [
@@ -244,5 +275,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MonoGame.Primitives2D 1.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "MonoGame.Primitives2D",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
