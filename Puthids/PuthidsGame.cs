@@ -62,9 +62,9 @@ namespace Puthids
             _graphics.ApplyChanges();
 
             // create game objects
-            _mainCharacter = new Puthid(10, 10, _screenWidth, _screenHeight, _spriteBatch, _gameContent);
+            _mainCharacter = new Puthid(100, 100, _screenWidth, _screenHeight, _spriteBatch, _gameContent);
             //vWall = new VWall(100, 100, 10, 100, _spriteBatch);
-            _terrarium = new Terrarium(100, 100, 500, 125, 5, _spriteBatch);
+            _terrarium = new Terrarium(10, 10, 800, 450, 5, _spriteBatch);
         }
 
         protected override void Update(GameTime gameTime)
@@ -84,19 +84,19 @@ namespace Puthids
             // process keyboard events
             if (newKeyboardState.IsKeyDown(Keys.Left))
             {
-                _mainCharacter.MoveLeft();
+                _mainCharacter.MoveLeft(_terrarium);
             }
             if (newKeyboardState.IsKeyDown(Keys.Right))
             {
-                _mainCharacter.MoveRight();
+                _mainCharacter.MoveRight(_terrarium);
             }
             if (newKeyboardState.IsKeyDown(Keys.Up))
             {
-                _mainCharacter.MoveUp();
+                _mainCharacter.MoveUp(_terrarium);
             }
             if (newKeyboardState.IsKeyDown(Keys.Down))
             {
-                _mainCharacter.MoveDown();
+                _mainCharacter.MoveDown(_terrarium);
             }
 
             _oldMouseState = newMouseState;

@@ -34,40 +34,69 @@ namespace Puthids.Entities
             spriteBatch.Draw(imgPuthid, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0);
         }
 
-        public void MoveLeft()
+        public void MoveLeft(Terrarium terr)
         {
+            float oldX = X;
+            float oldY = Y;
+
             X = X - MovementSpeed;
-            if (X < 1)
+            Rectangle charRect = new Rectangle((int)X, (int)Y, (int)Width, (int)Height);
+            if (charRect.Intersects(terr.LeftWall.WallRect) || charRect.Intersects(terr.RightWall.WallRect)
+               || charRect.Intersects(terr.TopWall.WallRect) || charRect.Intersects(terr.BottomWall.WallRect))
+            {
+                X = oldX;
+                Y = oldY;
+            }
+            else if (X < 1)
             {
                 X = 1;
             }
         }
 
-        public void MoveRight()
+        public void MoveRight(Terrarium terr)
         {
+            float oldX = X;
+            float oldY = Y;
             X = X + MovementSpeed;
-            //if ((X + Width) > ScreenWidth)
-            //{
-            //    X = ScreenWidth - Width;
-            //}
+            Rectangle charRect = new Rectangle((int)X, (int)Y, (int)Width, (int)Height);
+            if (charRect.Intersects(terr.LeftWall.WallRect) || charRect.Intersects(terr.RightWall.WallRect)
+               || charRect.Intersects(terr.TopWall.WallRect) || charRect.Intersects(terr.BottomWall.WallRect))
+            {
+                X = oldX;
+                Y = oldY;
+            }
         }
 
-        public void MoveUp()
+        public void MoveUp(Terrarium terr)
         {
+            float oldX = X;
+            float oldY = Y;
             Y = Y - MovementSpeed;
+            Rectangle charRect = new Rectangle((int)X, (int)Y, (int)Width, (int)Height);
+            if (charRect.Intersects(terr.LeftWall.WallRect) || charRect.Intersects(terr.RightWall.WallRect)
+               || charRect.Intersects(terr.TopWall.WallRect) || charRect.Intersects(terr.BottomWall.WallRect))
+            {
+                X = oldX;
+                Y = oldY;
+            }
             if (Y < 1)
             {
                 Y = 1;
             }
         }
 
-        public void MoveDown()
+        public void MoveDown(Terrarium terr)
         {
+            float oldX = X;
+            float oldY = Y;
             Y = Y + MovementSpeed;
-            //if ((Y + Height) > ScreenHeight)
-            //{
-            //    Y = ScreenHeight - Height;
-            //}
+            Rectangle charRect = new Rectangle((int)X, (int)Y, (int)Width, (int)Height);
+            if (charRect.Intersects(terr.LeftWall.WallRect) || charRect.Intersects(terr.RightWall.WallRect)
+               || charRect.Intersects(terr.TopWall.WallRect) || charRect.Intersects(terr.BottomWall.WallRect))
+            {
+                X = oldX;
+                Y = oldY;
+            }
         }
 
         public void MoveTo(float x)
