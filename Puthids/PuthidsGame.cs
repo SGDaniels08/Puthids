@@ -63,7 +63,8 @@ namespace Puthids
 
             // create game objects
             _mainCharacter = new Puthid(10, 10, _screenWidth, _screenHeight, _spriteBatch, _gameContent);
-            vWall = new VWall(100, 100, 10, 100, _spriteBatch);
+            //vWall = new VWall(100, 100, 10, 100, _spriteBatch);
+            _terrarium = new Terrarium(100, 100, 500, 125, 5, _spriteBatch);
         }
 
         protected override void Update(GameTime gameTime)
@@ -111,8 +112,8 @@ namespace Puthids
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
 
-            // _terrarium.Draw();
-            vWall.Draw();
+            _terrarium.Draw();
+            //vWall.Draw();
             _mainCharacter.Draw();
             _spriteBatch.End();
             base.Draw(gameTime);
