@@ -12,6 +12,7 @@ namespace Puthids.Entities
         public float ScreenWidth { get; set; }  // width of screen
         public float ScreenHeight { get; set; } // height of screen
         public float MovementSpeed { get; set; } // movement speed per frame of puthid
+        public string FacingDirection { get; set; } //
         private Texture2D imgPuthid { get; set; }   // current image of Puthid
         private SpriteBatch spriteBatch;    // allows us to write on backbuffer when we need to draw self
         private int frameIndex = 0;
@@ -24,6 +25,7 @@ namespace Puthids.Entities
             imgPuthid = gameContent.WalkingAnimation[frameIndex];
             Width = imgPuthid.Width;
             Height = imgPuthid.Height;
+            FacingDirection = Direction.RIGHT;
             this.spriteBatch = spriteBatch;
             ScreenWidth = screenWidth;
             MovementSpeed = 3;
@@ -31,13 +33,20 @@ namespace Puthids.Entities
 
         public void Draw()
         {
-            spriteBatch.Draw(imgPuthid, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0);
+            SpriteEffects spriteEffects = SpriteEffects.None;
+            if (this.FacingDirection == Direction.RIGHT)
+                spriteEffects = SpriteEffects.None;
+            else if (this.FacingDirection == Direction.LEFT)
+                spriteEffects = SpriteEffects.FlipHorizontally;
+
+            spriteBatch.Draw(imgPuthid, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, spriteEffects, 0);
         }
 
         public void MoveLeft(Terrarium terr)
         {
             float oldX = X;
             float oldY = Y;
+            FacingDirection = Direction.LEFT;
 
             X = X - MovementSpeed;
             Rectangle charRect = new Rectangle((int)X, (int)Y, (int)Width, (int)Height);
@@ -47,9 +56,13 @@ namespace Puthids.Entities
                 X = oldX;
                 Y = oldY;
             }
-            else if (X < 1)
+            foreach (ATerrain block in terr.Terrain.TGrid)
             {
-                X = 1;
+                if (charRect.Intersects(block.TRect))
+                {
+                    X = oldX;
+                    Y = oldY;
+                }
             }
         }
 
@@ -57,6 +70,8 @@ namespace Puthids.Entities
         {
             float oldX = X;
             float oldY = Y;
+            FacingDirection = Direction.RIGHT;
+
             X = X + MovementSpeed;
             Rectangle charRect = new Rectangle((int)X, (int)Y, (int)Width, (int)Height);
             if (charRect.Intersects(terr.LeftWall.WallRect) || charRect.Intersects(terr.RightWall.WallRect)
@@ -64,6 +79,14 @@ namespace Puthids.Entities
             {
                 X = oldX;
                 Y = oldY;
+            }
+            foreach (ATerrain block in terr.Terrain.TGrid)
+            {
+                if (charRect.Intersects(block.TRect))
+                {
+                    X = oldX;
+                    Y = oldY;
+                }
             }
         }
 
@@ -79,9 +102,13 @@ namespace Puthids.Entities
                 X = oldX;
                 Y = oldY;
             }
-            if (Y < 1)
+            foreach (ATerrain block in terr.Terrain.TGrid)
             {
-                Y = 1;
+                if (charRect.Intersects(block.TRect))
+                {
+                    X = oldX;
+                    Y = oldY;
+                }
             }
         }
 
@@ -96,6 +123,14 @@ namespace Puthids.Entities
             {
                 X = oldX;
                 Y = oldY;
+            }
+            foreach (ATerrain block in terr.Terrain.TGrid)
+            {
+                if (charRect.Intersects(block.TRect))
+                {
+                    X = oldX;
+                    Y = oldY;
+                }
             }
         }
 
@@ -119,6 +154,13 @@ namespace Puthids.Entities
                     X = 0;
                 }
             }
+        }
+
+        /* Other actions */
+        // 
+        public void Plant()
+        {
+
         }
     }
 }

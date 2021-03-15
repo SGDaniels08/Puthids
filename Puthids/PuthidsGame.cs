@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using Puthids.Entities;
 using MonoGame;
+using Puthids.Entities.Terrain;
 
 namespace Puthids
 {
@@ -64,7 +65,7 @@ namespace Puthids
             // create game objects
             _mainCharacter = new Puthid(100, 100, _screenWidth, _screenHeight, _spriteBatch, _gameContent);
             //vWall = new VWall(100, 100, 10, 100, _spriteBatch);
-            _terrarium = new Terrarium(10, 10, 800, 450, 5, _spriteBatch);
+            _terrarium = new Terrarium(10, 10, 800, 450, 25, _spriteBatch);
         }
 
         protected override void Update(GameTime gameTime)

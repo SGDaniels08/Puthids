@@ -20,7 +20,7 @@ namespace Puthids.Entities
         public override void Draw()
         {
             //FillRectangle Examples
-            spriteBatch.FillRectangle(WallRect, Color.Chocolate);
+            spriteBatch.FillRectangle(WallRect, Color.LightBlue);
         }
     }
 }

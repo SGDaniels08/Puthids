@@ -4,7 +4,7 @@ using MonoGame;
 
 namespace Puthids.Entities
 {
-    public abstract class Wall
+    public abstract class Wall : IImpermeable
     {
         public float X { get; set; }    // x position of wall (top-left corner)
         public float Y { get; set; }    // y position of wall (top-left corner)

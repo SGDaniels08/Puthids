@@ -13,6 +13,7 @@ namespace Puthids.Entities
         public HWall BottomWall { get; set; }
         public VWall LeftWall { get; set; }
         public VWall RightWall { get; set; }
+        public TerrainGrid Terrain { get; set; }
         private SpriteBatch _spriteBatch;
 
         public Terrarium (float x, float y, float length, float height, float thickness, SpriteBatch spriteBatch)
@@ -23,6 +24,8 @@ namespace Puthids.Entities
             BottomWall = new HWall(X, Y + Height - WallThickness, WallThickness, Length, _spriteBatch);
             LeftWall = new VWall(X, Y, WallThickness, Height, _spriteBatch);
             RightWall = new VWall(X + Length, Y, WallThickness, Height, _spriteBatch);
+
+            Terrain = new TerrainGrid(255, 215, 7, 4, _spriteBatch);
         }
 
         public void Draw()
@@ -31,6 +34,7 @@ namespace Puthids.Entities
             BottomWall.Draw();
             LeftWall.Draw();
             RightWall.Draw();
+            Terrain.Draw();
         }
     }
 }
