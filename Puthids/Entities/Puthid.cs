@@ -15,20 +15,25 @@ namespace Puthids.Entities
         public string FacingDirection { get; set; } //
         private Texture2D imgPuthid { get; set; }   // current image of Puthid
         private SpriteBatch spriteBatch;    // allows us to write on backbuffer when we need to draw self
-        private int frameIndex = 0;
+        private GameContent _gameContent;
+        private int FrameIndex 
+        { get; set; }
 
         public Puthid(float x, float y, float screenWidth, float screenHeight, SpriteBatch spriteBatch, GameContent gameContent)
         {
             X = x;
             Y = y;
+            _gameContent = gameContent;
             // Might need to take it from a List<>
-            imgPuthid = gameContent.WalkingAnimation[frameIndex];
+            
+            imgPuthid = gameContent.WalkingAnimation[0];
             Width = imgPuthid.Width;
             Height = imgPuthid.Height;
             FacingDirection = Direction.RIGHT;
             this.spriteBatch = spriteBatch;
             ScreenWidth = screenWidth;
             MovementSpeed = 3;
+            FrameIndex = 0;
         }
 
         public void Draw()
@@ -38,12 +43,14 @@ namespace Puthids.Entities
                 spriteEffects = SpriteEffects.None;
             else if (this.FacingDirection == Direction.LEFT)
                 spriteEffects = SpriteEffects.FlipHorizontally;
-
+            if (FrameIndex > 23) FrameIndex = 0;
+            imgPuthid = _gameContent.WalkingAnimation[FrameIndex];
             spriteBatch.Draw(imgPuthid, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, spriteEffects, 0);
         }
 
         public void MoveLeft(Terrarium terr)
         {
+            FrameIndex++;
             float oldX = X;
             float oldY = Y;
             FacingDirection = Direction.LEFT;
@@ -68,6 +75,8 @@ namespace Puthids.Entities
 
         public void MoveRight(Terrarium terr)
         {
+            FrameIndex++;
+
             float oldX = X;
             float oldY = Y;
             FacingDirection = Direction.RIGHT;
@@ -92,6 +101,8 @@ namespace Puthids.Entities
 
         public void MoveUp(Terrarium terr)
         {
+            FrameIndex++;
+
             float oldX = X;
             float oldY = Y;
             Y = Y - MovementSpeed;
@@ -114,6 +125,8 @@ namespace Puthids.Entities
 
         public void MoveDown(Terrarium terr)
         {
+            FrameIndex++;
+
             float oldX = X;
             float oldY = Y;
             Y = Y + MovementSpeed;
@@ -136,6 +149,8 @@ namespace Puthids.Entities
 
         public void MoveTo(float x)
         {
+            FrameIndex++;
+
             if (x >= 0)
             {
                 if (x < ScreenWidth - Width)
@@ -157,10 +172,6 @@ namespace Puthids.Entities
         }
 
         /* Other actions */
-        // 
-        public void Plant()
-        {
 
-        }
     }
 }
