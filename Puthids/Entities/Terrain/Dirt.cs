@@ -20,6 +20,7 @@ namespace Puthids.Entities.Terrain
         }
         public override void Draw()
         {
+            this.BlockColor = this.IsSelected ? Color.Green : Color.Brown;
             _spriteBatch.FillRectangle(TRect, this.BlockColor);
         }
     }

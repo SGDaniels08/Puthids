@@ -63,7 +63,7 @@ namespace Puthids
             _graphics.ApplyChanges();
 
             // create game objects
-            _mainCharacter = new Puthid(100, 100, _screenWidth, _screenHeight, _spriteBatch, _gameContent);
+            _mainCharacter = new Puthid(100, 100, _spriteBatch, _gameContent);
             //vWall = new VWall(100, 100, 10, 100, _spriteBatch);
             _terrarium = new Terrarium(10, 10, 800, 450, 25, _spriteBatch);
         }
@@ -98,6 +98,19 @@ namespace Puthids
             if (newKeyboardState.IsKeyDown(Keys.Down))
             {
                 _mainCharacter.MoveDown(_terrarium);
+            }
+
+            // process mouse events
+            if (_oldMouseState.LeftButton == ButtonState.Pressed && newMouseState.LeftButton == ButtonState.Released)
+            {
+                foreach (ATerrain block in _terrarium.Terrain.TGrid)
+                {
+                    block.IsSelected = false;
+                    if (block.TRect.Contains(newMouseState.Position))
+                    {
+                        _mainCharacter.Select(block);
+                    }
+                }
             }
 
             _oldMouseState = newMouseState;

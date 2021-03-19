@@ -21,11 +21,10 @@ namespace Puthids
             // load images
             for (int i = 0; i < 24; i++)
             {
-                temp = Content.Load<Texture2D>($"stickperson__frame{i}");
+                temp = Content.Load<Texture2D>($"puthid_walking{i}");
                 
                 WalkingAnimation.Add(temp);
             }
-
 
             // load sounds
 

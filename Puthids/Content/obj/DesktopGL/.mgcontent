@@ -4,6 +4,30 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking0.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking1.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking10.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking11.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking12.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking13.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking14.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking15.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking16.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking17.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking18.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking19.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking2.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking20.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking21.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking22.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking23.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking3.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking4.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking5.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking6.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking7.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking8.png</File>
+    <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking9.png</File>
     <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame0.png</File>
     <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame1.png</File>
     <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame10.png</File>
@@ -30,6 +54,30 @@
     <File>C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/stickperson__frame9.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

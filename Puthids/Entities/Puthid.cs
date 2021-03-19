@@ -9,17 +9,15 @@ namespace Puthids.Entities
         public float Y { get; set; }    // y position of Puthid (top-left corner)
         public float Width { get; set; }    // width of Puthid
         public float Height { get; set; }   // height of Puthid
-        public float ScreenWidth { get; set; }  // width of screen
-        public float ScreenHeight { get; set; } // height of screen
         public float MovementSpeed { get; set; } // movement speed per frame of puthid
         public string FacingDirection { get; set; } //
         private Texture2D imgPuthid { get; set; }   // current image of Puthid
-        private SpriteBatch spriteBatch;    // allows us to write on backbuffer when we need to draw self
-        private GameContent _gameContent;
+        private SpriteBatch _spriteBatch;    // allows us to write on backbuffer when we need to draw self
+        private GameContent _gameContent;   
         private int FrameIndex 
         { get; set; }
 
-        public Puthid(float x, float y, float screenWidth, float screenHeight, SpriteBatch spriteBatch, GameContent gameContent)
+        public Puthid(float x, float y, SpriteBatch spriteBatch, GameContent gameContent)
         {
             X = x;
             Y = y;
@@ -30,8 +28,7 @@ namespace Puthids.Entities
             Width = imgPuthid.Width;
             Height = imgPuthid.Height;
             FacingDirection = Direction.RIGHT;
-            this.spriteBatch = spriteBatch;
-            ScreenWidth = screenWidth;
+            this._spriteBatch = spriteBatch;
             MovementSpeed = 3;
             FrameIndex = 0;
         }
@@ -45,9 +42,10 @@ namespace Puthids.Entities
                 spriteEffects = SpriteEffects.FlipHorizontally;
             if (FrameIndex > 23) FrameIndex = 0;
             imgPuthid = _gameContent.WalkingAnimation[FrameIndex];
-            spriteBatch.Draw(imgPuthid, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, spriteEffects, 0);
+            _spriteBatch.Draw(imgPuthid, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, spriteEffects, 0);
         }
 
+        /* MOVEMENT */
         public void MoveLeft(Terrarium terr)
         {
             FrameIndex++;
@@ -147,31 +145,24 @@ namespace Puthids.Entities
             }
         }
 
-        public void MoveTo(float x)
+        public void MoveTo(float x, float y)
         {
-            FrameIndex++;
-
-            if (x >= 0)
-            {
-                if (x < ScreenWidth - Width)
-                {
-                    X = x;
-                }
-                else
-                {
-                    X = ScreenWidth - Width;
-                }
-            }
-            else
-            {
-                if (x < 0)
-                {
-                    X = 0;
-                }
-            }
+            
         }
 
         /* Other actions */
+        public void Select(ATerrain block)
+        {
+            block.IsSelected = true;
+        }
 
+
+
+        public Puthid Reproduce(Puthid mate)
+        {
+            Puthid offspring = new Puthid(0, 0, _spriteBatch, _gameContent);
+
+            return offspring;
+        }
     }
 }
