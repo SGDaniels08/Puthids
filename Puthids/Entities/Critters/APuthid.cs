@@ -3,27 +3,27 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Puthids.Entities
 {
-    public class Puthid
+    public abstract class APuthid : ICritter
     {
-        public float X { get; set; }    // x position of Puthid (top-left corner)
-        public float Y { get; set; }    // y position of Puthid (top-left corner)
-        public float Width { get; set; }    // width of Puthid
-        public float Height { get; set; }   // height of Puthid
-        public float MovementSpeed { get; set; } // movement speed per frame of puthid
-        public string FacingDirection { get; set; } //
+        public float X { get; set; }
+        public float Y { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
+        public float MovementSpeed { get; set; }
+        public string FacingDirection { get; set; }
         private Texture2D imgPuthid { get; set; }   // current image of Puthid
         private SpriteBatch _spriteBatch;    // allows us to write on backbuffer when we need to draw self
-        private GameContent _gameContent;   
-        private int FrameIndex 
+        private GameContent _gameContent;
+        private int FrameIndex
         { get; set; }
 
-        public Puthid(float x, float y, SpriteBatch spriteBatch, GameContent gameContent)
+        public APuthid(float x, float y, SpriteBatch spriteBatch, GameContent gameContent)
         {
             X = x;
             Y = y;
             _gameContent = gameContent;
             // Might need to take it from a List<>
-            
+
             imgPuthid = gameContent.WalkingAnimation[0];
             Width = imgPuthid.Width;
             Height = imgPuthid.Height;
@@ -31,7 +31,9 @@ namespace Puthids.Entities
             this._spriteBatch = spriteBatch;
             MovementSpeed = 3;
             FrameIndex = 0;
+            //AutomationEngine = automationEngine;
         }
+
 
         public void Draw()
         {
@@ -147,22 +149,15 @@ namespace Puthids.Entities
 
         public void MoveTo(float x, float y)
         {
-            
-        }
 
-        /* Other actions */
+        }
         public void Select(ATerrain block)
         {
             block.IsSelected = true;
         }
-
-
-
-        public Puthid Reproduce(Puthid mate)
+        public ICritter Reproduce(ICritter mate)
         {
-            Puthid offspring = new Puthid(0, 0, _spriteBatch, _gameContent);
-
-            return offspring;
+            return null;
         }
     }
 }

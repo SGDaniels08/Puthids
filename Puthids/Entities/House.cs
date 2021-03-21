@@ -8,6 +8,6 @@ namespace Puthids.Entities
     public class House
     {
         public Texture2D Image { get; set; }
-        public List<Puthid> Inhabitants { get; set; }       // Potential inhabitants
+        public List<APuthid> Inhabitants { get; set; }       // Potential inhabitants
     }
 }

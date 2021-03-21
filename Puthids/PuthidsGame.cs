@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Puthids.Entities;
 using MonoGame;
 using Puthids.Entities.Terrain;
+using Puthids.Entities.Critters;
 
 namespace Puthids
 {
@@ -19,8 +20,8 @@ namespace Puthids
         private int _screenWidth = 0;
         private int _screenHeight = 0;
 
-        private Puthid _mainCharacter;
-        private List<Puthid> _colony;
+        private PlayerPuthid _mainCharacter;
+        private List<NPCPuthid> _colony;
         private Terrarium _terrarium;
         private List<Terrarium> TheWall;
 
@@ -63,8 +64,7 @@ namespace Puthids
             _graphics.ApplyChanges();
 
             // create game objects
-            _mainCharacter = new Puthid(100, 100, _spriteBatch, _gameContent);
-            //vWall = new VWall(100, 100, 10, 100, _spriteBatch);
+            _mainCharacter = new PlayerPuthid(100, 100, _spriteBatch, _gameContent);
             _terrarium = new Terrarium(10, 10, 800, 450, 25, _spriteBatch);
         }
 
@@ -116,6 +116,12 @@ namespace Puthids
             _oldMouseState = newMouseState;
             _oldKeyboardState = newKeyboardState;
 
+            // NPC Actions
+            /* foreach (NPCPuthid npc in _colony)
+            {
+                npc.Autonomize(gameTime);
+            }
+            */
             base.Update(gameTime);
         }
 
@@ -127,7 +133,6 @@ namespace Puthids
             _spriteBatch.Begin();
 
             _terrarium.Draw();
-            //vWall.Draw();
             _mainCharacter.Draw();
             _spriteBatch.End();
             base.Draw(gameTime);
