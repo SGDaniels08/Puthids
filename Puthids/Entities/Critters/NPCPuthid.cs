@@ -23,7 +23,7 @@ namespace Puthids.Entities.Critters
         public void DetermineAction()
         {
             Random random = new Random();
-            int choice = random.Next(1, 3);
+            int choice = random.Next(1, 4);
             switch (choice)
             {
                 case 1:

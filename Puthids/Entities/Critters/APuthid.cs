@@ -42,8 +42,12 @@ namespace Puthids.Entities
                 spriteEffects = SpriteEffects.None;
             else if (this.FacingDirection == Direction.LEFT)
                 spriteEffects = SpriteEffects.FlipHorizontally;
+
             if (FrameIndex > 23) FrameIndex = 0;
-            imgPuthid = _gameContent.WalkingAnimation[FrameIndex];
+            if (FacingDirection == Direction.LEFT || FacingDirection == Direction.RIGHT)
+                imgPuthid = _gameContent.WalkingAnimation[FrameIndex];
+            else if (FacingDirection == Direction.FORWARD)
+                imgPuthid = _gameContent.FacingForward;
             _spriteBatch.Draw(imgPuthid, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, spriteEffects, 0);
         }
 
@@ -153,7 +157,6 @@ namespace Puthids.Entities
         }
         public void FaceForward(Terrarium terr)
         {
-            imgPuthid = _gameContent.FacingForward;
         }
         public void Select(ATerrain block)
         {

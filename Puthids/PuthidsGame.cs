@@ -27,6 +27,8 @@ namespace Puthids
         private List<Terrarium> TheWall;
         private House _house;
 
+
+        private const double MILLISECONDS_2000 = 2000;
         private const double MILLISECONDS_5000 = 5000;
 
         // TEST OBJECTS //
@@ -136,7 +138,7 @@ namespace Puthids
             // NPC Actions
             // every five seconds, either stop or change direction
             elapsedTime += gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (elapsedTime >= MILLISECONDS_5000)
+            if (elapsedTime >= MILLISECONDS_2000)
             {
                 foreach (NPCPuthid npc in _colony)
                 {
