@@ -20,13 +20,38 @@ namespace Puthids.Entities.Critters
 
         }
 
-        public void Autonomize(GameTime gameTime)
+        public void DetermineAction()
         {
-            //Create a float(or double, I don't know what xna uses), and set it to zero.
-            float elapsedTime = 0;
-            //Each frame add the elapsed time to it.I believe the game class provides you with that info.
-            //Once the total time hits 5 seconds (or 5000 milliseconds, or whatever unit xna uses), reset the time to zero again and spawn an enemy.
-           AutomationEngine.Autonomize();
+            Random random = new Random();
+            int choice = random.Next(1, 3);
+            switch (choice)
+            {
+                case 1:
+                    FacingDirection = Direction.LEFT;
+                    break;
+                case 2:
+                    FacingDirection = Direction.RIGHT;
+                    break;
+                case 3:
+                    FacingDirection = Direction.FORWARD;
+                    break;
+            }
+        }
+
+        internal void Act(Terrarium terr)
+        {
+            switch (FacingDirection)
+            {
+                case Direction.LEFT:
+                    this.MoveLeft(terr);
+                    break;
+                case Direction.RIGHT:
+                    this.MoveRight(terr);
+                    break;
+                case Direction.FORWARD:
+                    this.FaceForward(terr);
+                    break;
+            }
         }
     }
 }

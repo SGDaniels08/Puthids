@@ -19,12 +19,15 @@ namespace Puthids
 
         private int _screenWidth = 0;
         private int _screenHeight = 0;
+        private double elapsedTime = 0;
 
         private PlayerPuthid _mainCharacter;
         private List<NPCPuthid> _colony;
         private Terrarium _terrarium;
         private List<Terrarium> TheWall;
         private House _house;
+
+        private const double MILLISECONDS_5000 = 5000;
 
         // TEST OBJECTS //
         private VWall vWall;
@@ -69,7 +72,7 @@ namespace Puthids
             _terrarium = new Terrarium(10, 10, 800, 450, 25, _spriteBatch);
             _colony = new List<NPCPuthid>
             {
-                new NPCPuthid(500, 135, _spriteBatch, _gameContent)
+                new NPCPuthid(500, 130, _spriteBatch, _gameContent)
             };
 
             _house = new House(40, 75, _spriteBatch, _gameContent);
@@ -131,11 +134,21 @@ namespace Puthids
             _oldKeyboardState = newKeyboardState;
 
             // NPC Actions
-            /* foreach (NPCPuthid npc in _colony)
+            // every five seconds, either stop or change direction
+            elapsedTime += gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (elapsedTime >= MILLISECONDS_5000)
             {
-                npc.Autonomize(gameTime);
+                foreach (NPCPuthid npc in _colony)
+                {
+                    npc.DetermineAction();
+                }
+                elapsedTime = 0;
             }
-            */
+
+            foreach (NPCPuthid npc in _colony)
+            {
+                npc.Act(_terrarium);
+            }
             base.Update(gameTime);
         }
 

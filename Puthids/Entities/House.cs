@@ -37,7 +37,7 @@ namespace Puthids.Entities
 
         public NPCPuthid SpawnPuthid()
         {
-            NPCPuthid temp = new NPCPuthid(200, 135, _spriteBatch, _gameContent);
+            NPCPuthid temp = new NPCPuthid(200, 130, _spriteBatch, _gameContent);
             return temp;
         }
     }

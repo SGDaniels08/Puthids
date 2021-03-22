@@ -21,7 +21,7 @@ namespace Puthids.Entities
         public void MoveRight(Terrarium terr);
         public void MoveUp(Terrarium terr);
         public void MoveDown(Terrarium terr);
-
+        public void FaceForward(Terrarium terr);
         public void MoveTo(float x, float y);
 
         /* Other actions */

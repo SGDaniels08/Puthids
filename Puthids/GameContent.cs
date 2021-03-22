@@ -12,6 +12,7 @@ namespace Puthids
         public Texture2D ImgPuthid { get; set; }
         public Texture2D ImgHouse { get; set; }
         public List<Texture2D> WalkingAnimation { get; set; }
+        public Texture2D FacingForward { get; set; }
         public SoundEffect Bonk { get; set; }
         public SpriteFont GameFont { get; set; }
 
@@ -27,6 +28,7 @@ namespace Puthids
                 
                 WalkingAnimation.Add(temp);
             }
+            FacingForward = Content.Load<Texture2D>("stickperson__wave0");
 
             // load sounds
 

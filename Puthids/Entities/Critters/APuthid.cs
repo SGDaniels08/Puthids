@@ -151,6 +151,10 @@ namespace Puthids.Entities
         {
 
         }
+        public void FaceForward(Terrarium terr)
+        {
+            imgPuthid = _gameContent.FacingForward;
+        }
         public void Select(ATerrain block)
         {
             block.IsSelected = true;
