@@ -22,7 +22,11 @@ namespace Puthids.Entities.Critters
 
         public void Autonomize(GameTime gameTime)
         {
-            AutomationEngine.Autonomize();
+            //Create a float(or double, I don't know what xna uses), and set it to zero.
+            float elapsedTime = 0;
+            //Each frame add the elapsed time to it.I believe the game class provides you with that info.
+            //Once the total time hits 5 seconds (or 5000 milliseconds, or whatever unit xna uses), reset the time to zero again and spawn an enemy.
+           AutomationEngine.Autonomize();
         }
     }
 }

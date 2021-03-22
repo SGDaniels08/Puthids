@@ -1,4 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/House.png","C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/bin/DesktopGL/Content/House.xnb","TextureProcessor","Texture2DContent",1359,112085,0.1607962
 "C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking0.png","C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/bin/DesktopGL/Content/puthid_walking0.xnb","TextureProcessor","Texture2DContent",2123,17085,0.1280588
 "C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking1.png","C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/bin/DesktopGL/Content/puthid_walking1.xnb","TextureProcessor","Texture2DContent",2155,17085,0.1229649
 "C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/puthid_walking10.png","C:/Users/SGDan/Desktop/Code/Puthids/Puthids/Content/bin/DesktopGL/Content/puthid_walking10.xnb","TextureProcessor","Texture2DContent",2024,17085,0.0046957

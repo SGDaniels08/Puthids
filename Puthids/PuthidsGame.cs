@@ -24,6 +24,7 @@ namespace Puthids
         private List<NPCPuthid> _colony;
         private Terrarium _terrarium;
         private List<Terrarium> TheWall;
+        private House _house;
 
         // TEST OBJECTS //
         private VWall vWall;
@@ -66,6 +67,12 @@ namespace Puthids
             // create game objects
             _mainCharacter = new PlayerPuthid(100, 100, _spriteBatch, _gameContent);
             _terrarium = new Terrarium(10, 10, 800, 450, 25, _spriteBatch);
+            _colony = new List<NPCPuthid>
+            {
+                new NPCPuthid(500, 135, _spriteBatch, _gameContent)
+            };
+
+            _house = new House(40, 75, _spriteBatch, _gameContent);
         }
 
         protected override void Update(GameTime gameTime)
@@ -133,6 +140,12 @@ namespace Puthids
             _spriteBatch.Begin();
 
             _terrarium.Draw();
+            _house.Draw();
+
+            foreach (NPCPuthid npc in _colony)
+            {
+                npc.Draw();
+            }
             _mainCharacter.Draw();
             _spriteBatch.End();
             base.Draw(gameTime);

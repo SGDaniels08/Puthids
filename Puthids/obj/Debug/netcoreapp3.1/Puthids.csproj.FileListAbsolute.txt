@@ -118,3 +118,4 @@ C:\Users\SGDan\Desktop\Code\Puthids\Puthids\bin\Debug\netcoreapp3.1\Content\puth
 C:\Users\SGDan\Desktop\Code\Puthids\Puthids\bin\Debug\netcoreapp3.1\Content\puthid_walking7.xnb
 C:\Users\SGDan\Desktop\Code\Puthids\Puthids\bin\Debug\netcoreapp3.1\Content\puthid_walking8.xnb
 C:\Users\SGDan\Desktop\Code\Puthids\Puthids\bin\Debug\netcoreapp3.1\Content\puthid_walking9.xnb
+C:\Users\SGDan\Desktop\Code\Puthids\Puthids\bin\Debug\netcoreapp3.1\Content\House.xnb
