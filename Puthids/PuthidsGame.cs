@@ -110,6 +110,13 @@ namespace Puthids
             // process mouse events
             if (_oldMouseState.LeftButton == ButtonState.Pressed && newMouseState.LeftButton == ButtonState.Released)
             {
+                _house.IsSelected = false;
+                if (_house.Rect.Contains(newMouseState.Position))
+                {
+                    _house.IsSelected = true;
+                    _colony.Add(_house.SpawnPuthid());
+                }
+
                 foreach (ATerrain block in _terrarium.Terrain.TGrid)
                 {
                     block.IsSelected = false;

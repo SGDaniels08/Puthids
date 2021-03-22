@@ -13,6 +13,8 @@ namespace Puthids.Entities
         public float Y { get; set; }
         public float Width { get; set; }
         public float Height { get; set; }
+        public bool IsSelected { get; set; }
+        public Rectangle Rect { get; set; }
         public Texture2D Image { get; set; }
         public List<APuthid> Inhabitants { get; set; }       // Potential inhabitants
 
@@ -21,20 +23,21 @@ namespace Puthids.Entities
 
         public House(float x, float y, SpriteBatch spriteBatch, GameContent gameContent)
         {
-            X = x; Y = y; _spriteBatch = spriteBatch; _gameContent = gameContent;
+            X = x; Y = y; IsSelected = false; _spriteBatch = spriteBatch; _gameContent = gameContent;
             Image = _gameContent.ImgHouse;
+            Width = Image.Width; Height = Image.Height;
+            Rect = new Rectangle((int)X, (int)Y, (int)Width, (int)Height);
         }
 
         public void Draw()
         {
-            SpriteEffects spriteEffects = SpriteEffects.None;
+            SpriteEffects spriteEffects = IsSelected ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             _spriteBatch.Draw(Image, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, spriteEffects, 0);
         }
 
-        public APuthid SpawnPuthid()
+        public NPCPuthid SpawnPuthid()
         {
             NPCPuthid temp = new NPCPuthid(200, 135, _spriteBatch, _gameContent);
-            // add to _colony
             return temp;
         }
     }
