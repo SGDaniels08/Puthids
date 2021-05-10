@@ -1,1 +1,15 @@
 ﻿https://gamedev.stackexchange.com/questions/131133/monogames-most-efficient-way-of-checking-intersections-between-multiple-objects
+
+Next steps:
+++ multiple terraria
+-- tunnels to connect terraria
+-- facing forward sometimes waves
+-- hitting a wall turns puthid around, resets timer
+-- fix dirtblocks (contiguous, bound to terraria)
+-- make decision timer random
+-- decision timer for each puthid
+-- refactor
+
+Next Major Features:
+-- digging
+-- crops

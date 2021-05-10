@@ -10,6 +10,8 @@ namespace Puthids.Entities
     {
         public float X { get; set; }
         public float Y { get; set; }
+        public int Length { get; set; } = 35;
+        public int Height { get; set; } = 50;
         // [rows, columns]
         public ATerrain[,] TGrid { get; set; }
 
@@ -26,11 +28,11 @@ namespace Puthids.Entities
                 // Add a block for each row in that column
                 for (int j = 0; j < rows; j++)
                 {
-                    TGrid[i, j] = new Dirt(tempX, tempY, 35, 50, spriteBatch);
-                    tempY += 55;
+                    TGrid[i, j] = new Dirt(tempX, tempY, Length, Height, spriteBatch);
+                    tempY += Height;
                 }
                 // Repeat with the next column
-                tempX += 40;
+                tempX += Length;
             }
         }
 

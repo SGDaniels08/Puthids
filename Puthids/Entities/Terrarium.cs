@@ -25,7 +25,12 @@ namespace Puthids.Entities
             LeftWall = new VWall(X, Y, WallThickness, Height, _spriteBatch);
             RightWall = new VWall(X + Length, Y, WallThickness, Height, _spriteBatch);
 
-            Terrain = new TerrainGrid((X + WallThickness), 215, 19, 4, _spriteBatch);
+            // Calculate dimensions
+            float terrainStartX = (X + WallThickness);
+            float terrainStartY = 215;
+            int columns = 19;
+            int rows = 4;
+            Terrain = new TerrainGrid(terrainStartX, terrainStartY, columns, rows, _spriteBatch);
         }
 
         public void Draw()

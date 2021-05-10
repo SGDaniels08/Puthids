@@ -23,12 +23,14 @@ namespace Puthids
 
         private PlayerPuthid _mainCharacter;
         private List<NPCPuthid> _colony;
-        private Terrarium _terrarium;
+        private Terrarium _terr1;
+        private Terrarium _terr2;
         private List<Terrarium> TheWall;
         private House _house;
 
 
         private const double MILLISECONDS_2000 = 2000;
+        private const double MILLISECONDS_3000 = 3000;
         private const double MILLISECONDS_5000 = 5000;
 
         // TEST OBJECTS //
@@ -57,9 +59,9 @@ namespace Puthids
             _screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             // set game to 1000 x 500 or screen max if smaller
-            if (_screenWidth >= 1000)
+            if (_screenWidth >= 2000)
             {
-                _screenWidth = 1000;
+                _screenWidth = 2000;
             }
             if (_screenHeight >= 500)
             {
@@ -71,7 +73,8 @@ namespace Puthids
 
             // create game objects
             _mainCharacter = new PlayerPuthid(100, 100, _spriteBatch, _gameContent);
-            _terrarium = new Terrarium(10, 10, 800, 450, 25, _spriteBatch);
+            _terr1 = new Terrarium(10, 10, 800, 450, 25, _spriteBatch);
+            _terr2 = new Terrarium(1200, 10, 300, 450, 10, _spriteBatch);
             _colony = new List<NPCPuthid>
             {
                 new NPCPuthid(500, 130, _spriteBatch, _gameContent)
@@ -97,19 +100,19 @@ namespace Puthids
             // process keyboard events
             if (newKeyboardState.IsKeyDown(Keys.Left))
             {
-                _mainCharacter.MoveLeft(_terrarium);
+                _mainCharacter.MoveLeft(_terr1);
             }
             if (newKeyboardState.IsKeyDown(Keys.Right))
             {
-                _mainCharacter.MoveRight(_terrarium);
+                _mainCharacter.MoveRight(_terr1);
             }
             if (newKeyboardState.IsKeyDown(Keys.Up))
             {
-                _mainCharacter.MoveUp(_terrarium);
+                _mainCharacter.MoveUp(_terr1);
             }
             if (newKeyboardState.IsKeyDown(Keys.Down))
             {
-                _mainCharacter.MoveDown(_terrarium);
+                _mainCharacter.MoveDown(_terr1);
             }
 
             // process mouse events
@@ -122,7 +125,7 @@ namespace Puthids
                     _colony.Add(_house.SpawnPuthid());
                 }
 
-                foreach (ATerrain block in _terrarium.Terrain.TGrid)
+                foreach (ATerrain block in _terr1.Terrain.TGrid)
                 {
                     block.IsSelected = false;
                     if (block.TRect.Contains(newMouseState.Position))
@@ -149,7 +152,7 @@ namespace Puthids
 
             foreach (NPCPuthid npc in _colony)
             {
-                npc.Act(_terrarium);
+                npc.Act(_terr1);
             }
             base.Update(gameTime);
         }
@@ -161,7 +164,8 @@ namespace Puthids
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
 
-            _terrarium.Draw();
+            _terr1.Draw();
+            _terr2.Draw();
             _house.Draw();
 
             foreach (NPCPuthid npc in _colony)
