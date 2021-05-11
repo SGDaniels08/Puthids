@@ -15,10 +15,10 @@ namespace Puthids.Entities
         public Color BlockColor { get; set; }
         protected SpriteBatch _spriteBatch;
 
-        public ATerrain(int x, int y, int length, int height, SpriteBatch spriteBatch)
+        public ATerrain(int x, int y, SpriteBatch spriteBatch)
         {
             this.X = x; this.Y = y; this.IsSelected = false; this._spriteBatch = spriteBatch;
-            this.TRect = new Rectangle(x, y, length, height);
+            this.TRect = new Rectangle(x, y, (int)Width, (int)Height);
         }
 
         public abstract void Draw();

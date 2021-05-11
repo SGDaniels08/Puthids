@@ -28,7 +28,7 @@ namespace Puthids.Entities
                 // Add a block for each row in that column
                 for (int j = 0; j < rows; j++)
                 {
-                    TGrid[i, j] = new Dirt(tempX, tempY, Length, Height, spriteBatch);
+                    TGrid[i, j] = new Dirt(tempX, tempY, spriteBatch);
                     tempY += Height;
                 }
                 // Repeat with the next column

@@ -13,7 +13,7 @@ namespace Puthids.Entities.Terrain
         public bool IsTilled { get; set; }
         public bool IsPlanted { get; set; }
 
-        public Dirt(int x, int y, int length, int height, SpriteBatch spriteBatch) : base (x, y, length, height, spriteBatch)
+        public Dirt(int x, int y, SpriteBatch spriteBatch) : base (x, y, spriteBatch)
         {
 
             this.BlockColor = Color.Brown;

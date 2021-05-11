@@ -9,7 +9,7 @@ namespace Puthids.Entities.Terrain
 {
     public class Air : ATerrain
     {
-        public Air(int x, int y, int length, int height, SpriteBatch spriteBatch) : base(x, y, length, height, spriteBatch)
+        public Air(int x, int y, SpriteBatch spriteBatch) : base(x, y, spriteBatch)
         {
             this.BlockColor = Color.Transparent;
         }
