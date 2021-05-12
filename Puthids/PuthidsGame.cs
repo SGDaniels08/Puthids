@@ -75,8 +75,8 @@ namespace Puthids
             _mainCharacter = new PlayerPuthid(100, 100, _spriteBatch, _gameContent);
 
             // Build out terrarium
-            _terr1 = new Terrarium(10, 10, 800, 450, 25, _spriteBatch); // refactor to: new Terrarium(x, y, airGrid, groundGrid, _spriteBatch);
-            //_terr2 = new Terrarium(1200, 10, 300, 450, 10, _spriteBatch);
+            _terr1 = new Terrarium(10, 10, 800, 450, 25, _spriteBatch); // refactor to: new Terrarium(float x, float y, wallThickness, airHeight, groundGrid, _spriteBatch);
+            _terr2 = new Terrarium(1200, 10, 300, 450, 10, _spriteBatch);
             _colony = new List<NPCPuthid>
             {
                 new NPCPuthid(500, 130, _spriteBatch, _gameContent)
@@ -167,7 +167,7 @@ namespace Puthids
             _spriteBatch.Begin();
 
             _terr1.Draw();
-            //_terr2.Draw();
+            _terr2.Draw();
             _house.Draw();
 
             foreach (NPCPuthid npc in _colony)

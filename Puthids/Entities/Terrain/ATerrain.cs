@@ -12,6 +12,7 @@ namespace Puthids.Entities
         public static float Width { get; set; } = 35;
         public static float Height { get; set; } = 50;
         public bool IsSelected { get; set; }
+        public bool IsPermeable { get; set; }
         public Color BlockColor { get; set; }
         protected SpriteBatch _spriteBatch;
 

@@ -9,22 +9,23 @@ namespace Puthids.Entities.Terrain
     {
         public GroundGrid(float x, float y, int columns, int rows, SpriteBatch spriteBatch)
         {
-            X = x; Y = y;
-            TGrid = new ATerrain[columns, rows];
-            int tempX = (int)X;
+            X = x; Y = y; Columns = columns; Rows = rows;
+
+            TGrid = new ATerrain[Columns, Rows];
+            float tempX = X;
             // Start with one column...
-            for (int i = 0; i < columns; i++)
+            for (int i = 0; i < Columns; i++)
             {
-                int tempY = (int)Y;
+                float tempY = Y;
 
                 // Add a block for each row in that column
-                for (int j = 0; j < rows; j++)
+                for (int j = 0; j < Rows; j++)
                 {
-                    TGrid[i, j] = new Dirt(tempX, tempY, spriteBatch);
-                    tempY += Height;
+                    TGrid[i, j] = new Dirt((int)tempX, (int)tempY, spriteBatch);
+                    tempY += ATerrain.Height;
                 }
                 // Repeat with the next column
-                tempX += Length;
+                tempX += ATerrain.Width;
             }
         }
     }

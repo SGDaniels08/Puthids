@@ -10,8 +10,10 @@ namespace Puthids.Entities
     {
         public float X { get; set; }
         public float Y { get; set; }
-        public int Length { get; set; }
-        public int Height { get; set; }
+        public int Columns { get; set; }
+        public int Rows { get; set; }
+        public float Length { get; set; }
+        public float Height { get; set; }
         // [rows, columns]
         public ATerrain[,] TGrid { get; set; }
 
