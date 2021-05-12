@@ -14,6 +14,7 @@ namespace Puthids.Entities
         public HWall BottomWall { get; set; }
         public VWall LeftWall { get; set; }
         public VWall RightWall { get; set; }
+        public float AirHeight { get; set; }
         public ATerrainGrid Terrain { get; set; }
         private SpriteBatch _spriteBatch;
 
@@ -21,6 +22,8 @@ namespace Puthids.Entities
         {
             X = x; Y = y; Length = length; Height = height; WallThickness = thickness;
             _spriteBatch = spriteBatch;
+
+            // Build walls based on airHeight and groundGrid
             TopWall = new HWall(X, Y, WallThickness, Length, _spriteBatch);
             BottomWall = new HWall(X, Y + Height - WallThickness, WallThickness, Length, _spriteBatch);
             LeftWall = new VWall(X, Y, WallThickness, Height, _spriteBatch);

@@ -7,11 +7,9 @@ namespace Puthids.Entities.Terrain
 {
     public class GroundGrid : ATerrainGrid
     {
-        public GroundGrid(float x, float y, int columns, int rows, SpriteBatch spriteBatch)
+        public GroundGrid(float x, float y, int columns, int rows, SpriteBatch spriteBatch) : base (x, y, columns, rows, spriteBatch)
         {
-            X = x; Y = y; Columns = columns; Rows = rows;
 
-            TGrid = new ATerrain[Columns, Rows];
             float tempX = X;
             // Start with one column...
             for (int i = 0; i < Columns; i++)
