@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using Puthids.Entities.Terrain;
 
 namespace Puthids.Entities
 {
@@ -13,7 +14,7 @@ namespace Puthids.Entities
         public HWall BottomWall { get; set; }
         public VWall LeftWall { get; set; }
         public VWall RightWall { get; set; }
-        public TerrainGrid Terrain { get; set; }
+        public ATerrainGrid Terrain { get; set; }
         private SpriteBatch _spriteBatch;
 
         public Terrarium (float x, float y, float length, float height, float thickness, SpriteBatch spriteBatch)
@@ -30,7 +31,7 @@ namespace Puthids.Entities
             float terrainStartY = 215;
             int columns = 19;
             int rows = 4;
-            Terrain = new TerrainGrid(terrainStartX, terrainStartY, columns, rows, _spriteBatch);
+            Terrain = new GroundGrid(terrainStartX, terrainStartY, columns, rows, _spriteBatch);
         }
 
         public void Draw()

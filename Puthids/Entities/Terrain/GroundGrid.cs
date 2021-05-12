@@ -1,21 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using Puthids.Entities.Terrain;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Puthids.Entities
+namespace Puthids.Entities.Terrain
 {
-    public class TerrainGrid
+    public class GroundGrid : ATerrainGrid
     {
-        public float X { get; set; }
-        public float Y { get; set; }
-        public int Length { get; set; } = 35;
-        public int Height { get; set; } = 50;
-        // [rows, columns]
-        public ATerrain[,] TGrid { get; set; }
-
-        public TerrainGrid (float x, float y, int columns, int rows, SpriteBatch spriteBatch)
+        public GroundGrid(float x, float y, int columns, int rows, SpriteBatch spriteBatch)
         {
             X = x; Y = y;
             TGrid = new ATerrain[columns, rows];
@@ -33,14 +25,6 @@ namespace Puthids.Entities
                 }
                 // Repeat with the next column
                 tempX += Length;
-            }
-        }
-
-        internal void Draw()
-        {
-            foreach (ATerrain block in TGrid)
-            {
-                block.Draw();
             }
         }
     }
