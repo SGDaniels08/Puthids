@@ -23,7 +23,12 @@ namespace Puthids.Entities
             X = x; Y = y; Length = length; Height = height; WallThickness = thickness;
             _spriteBatch = spriteBatch;
 
-            // Build walls based on airHeight and groundGrid
+            //// Build walls based on airHeight and groundGrid
+            //TopWall = new HWall(X, Y, WallThickness, GroundGrid.Length + (2 * (WallThickness)), _spriteBatch);
+            //BottomWall = new HWall(X, Y + WallThickness + AirHeight + GroundGrid.Height, WallThickness, GroundGrid.Length + (2 * (WallThickness)), _spriteBatch);
+            //LeftWall = new VWall(X, Y, WallThickness, GroundGrid.Height + (2 * (WallThickness)), _spriteBatch);
+            //RightWall = new VWall(X + WallThickness + GroundGrid.Length, Y, WallThickness, GroundGrid.Height + (2 * (WallThickness)), _spriteBatch);
+
             TopWall = new HWall(X, Y, WallThickness, Length, _spriteBatch);
             BottomWall = new HWall(X, Y + Height - WallThickness, WallThickness, Length, _spriteBatch);
             LeftWall = new VWall(X, Y, WallThickness, Height, _spriteBatch);
