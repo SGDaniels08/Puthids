@@ -74,8 +74,16 @@ namespace Puthids
             // create game objects
             _mainCharacter = new PlayerPuthid(100, 100, _spriteBatch, _gameContent);
 
+
             // Build out terrarium
-            _terr1 = new Terrarium(10, 10, 800, 450, 25, _spriteBatch); // refactor to: new Terrarium(float x, float y, wallThickness, airHeight, groundGrid, _spriteBatch);
+            // Build groundgrid
+            float terrainStartX = 10;
+            float terrainStartY = 200;
+            int columns = 19;
+            int rows = 4;
+            GroundGrid tG = new GroundGrid(terrainStartX, terrainStartY, columns, rows, _spriteBatch);
+            //_terr1 = new Terrarium(10, 10, 800, 450, 25, _spriteBatch); 
+            _terr1 = new Terrarium(10, 10, 25, 200, tG, _spriteBatch);
             _terr2 = new Terrarium(1200, 10, 300, 450, 10, _spriteBatch);
             _colony = new List<NPCPuthid>
             {

@@ -20,7 +20,7 @@ namespace Puthids.Entities
 
         public Terrarium(float x, float y, float wallThickness, float airHeight, ATerrainGrid groundGrid, SpriteBatch spriteBatch)
         {
-            X = x; Y = y; WallThickness = wallThickness; Length = groundGrid.Length; Height = airHeight + groundGrid.Height;
+            X = x; Y = y; WallThickness = wallThickness; Length = groundGrid.Length; Height = airHeight + groundGrid.Height; Terrain = groundGrid;
             _spriteBatch = spriteBatch;
 
             // Build walls based on airHeight and groundGrid dimensions

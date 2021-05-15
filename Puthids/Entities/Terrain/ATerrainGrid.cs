@@ -12,8 +12,8 @@ namespace Puthids.Entities
         public float Y { get; set; }
         public int Columns { get; set; }
         public int Rows { get; set; }
-        public float Length { get; set; }
-        public float Height { get; set; }
+        public float Length => Columns * ATerrain.Width;
+        public float Height => Rows * ATerrain.Height;
         // [rows, columns]
         public ATerrain[,] TGrid { get; set; }
 
