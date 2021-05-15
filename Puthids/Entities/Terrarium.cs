@@ -20,15 +20,22 @@ namespace Puthids.Entities
 
         public Terrarium(float x, float y, float wallThickness, float airHeight, ATerrainGrid groundGrid, SpriteBatch spriteBatch)
         {
-            X = x; Y = y; WallThickness = wallThickness; Length = groundGrid.Length; Height = airHeight + groundGrid.Height; Terrain = groundGrid;
+            X = x; Y = y; Length = groundGrid.Length; Height = airHeight + groundGrid.Height; WallThickness = wallThickness; AirHeight = airHeight; 
+            Terrain = groundGrid;
+            // Set X and Y of ground grid
+            Terrain.X = X + WallThickness;
+            Terrain.Y = Y + WallThickness + AirHeight;
             _spriteBatch = spriteBatch;
 
-            // Build walls based on airHeight and groundGrid dimensions
-            TopWall = new HWall(X, Y, WallThickness, Terrain.Length + (2 * (WallThickness)), _spriteBatch);
-            BottomWall = new HWall(X, Y + WallThickness + AirHeight + Terrain.Height, WallThickness, Terrain.Length + (2 * (WallThickness)), _spriteBatch);
-            LeftWall = new VWall(X, Y, WallThickness, Terrain.Height + (2 * (WallThickness)), _spriteBatch);
-            RightWall = new VWall(X + WallThickness + Terrain.Length, Y, WallThickness, Terrain.Height + (2 * (WallThickness)), _spriteBatch);
-
+            //// Build walls based on airHeight and groundGrid dimensions
+            //TopWall = new HWall(X, Y, WallThickness, Terrain.Length + (2 * (WallThickness)), _spriteBatch);
+            //BottomWall = new HWall(X, Y + WallThickness + AirHeight + Terrain.Height, WallThickness, Terrain.Length + (2 * (WallThickness)), _spriteBatch);
+            //LeftWall = new VWall(X, Y, WallThickness, Terrain.Height + (2 * (WallThickness)), _spriteBatch);
+            //RightWall = new VWall(X + WallThickness + Terrain.Length, Y, WallThickness, Terrain.Height + (2 * (WallThickness)), _spriteBatch);
+            TopWall = new HWall(X, Y, WallThickness, Length, _spriteBatch);
+            BottomWall = new HWall(X, Y + Height - WallThickness, WallThickness, Length, _spriteBatch);
+            LeftWall = new VWall(X, Y, WallThickness, Height, _spriteBatch);
+            RightWall = new VWall(X + Length, Y, WallThickness, Height, _spriteBatch);
         }
         public Terrarium (float x, float y, float length, float height, float thickness, SpriteBatch spriteBatch)
         {

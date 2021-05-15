@@ -17,6 +17,14 @@ namespace Puthids.Entities
         // [rows, columns]
         public ATerrain[,] TGrid { get; set; }
 
+
+        public ATerrainGrid(int columns, int rows, SpriteBatch spriteBatch)
+        {
+            Columns = columns; Rows = rows;
+
+            TGrid = new ATerrain[Columns, Rows];
+        }
+
         public ATerrainGrid(float x, float y, int columns, int rows, SpriteBatch spriteBatch)
         {
             X = x; Y = y; Columns = columns; Rows = rows;
